@@ -51,30 +51,6 @@
                         </ul>
                     </div>
                 </div>
-                
-                <div class="col-md-4">
-                    <div class="header-right">
-                        <ul class="list-unstyled list-inline">
-                            <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Đơn vị tiền tệ :</span><span class="value">USD </span><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">VNĐ</a></li>
-                                    <li><a href="#">USD</a></li>
-                                    <li><a href="#">EUR</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Ngôn ngữ :</span><span class="value">Tiếng Việt </span><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">English</a></li>
-                                    <li><a href="#">French</a></li>
-                                    <li><a href="#">German</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </div> <!-- End header area -->
@@ -84,7 +60,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="logo">
-                        <h1><a href="./"><img src="img/logo.png"></a></h1>
+                        <h1><img src="imgs/logo.png"></a></h1>
                     </div>
                 </div>
                 
@@ -142,8 +118,8 @@
                 <div class="col-md-4">
                     <div class="single-sidebar">
                         <h2 class="sidebar-title">Tìm kiếm sản phẩm</h2>
-                        <form action="">
-                            <input type="text" placeholder="tên sản phẩm...">
+                        <form action="shop.html" method="GET">
+                            <input name = "q" type="text" placeholder="tên sản phẩm...">
                             <input type="submit" value="Tìm kiếm">
                         </form>
                     </div>
@@ -151,31 +127,31 @@
                     <div class="single-sidebar">
                         <h2 class="sidebar-title">Danh sách sản phẩm</h2>
                         <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Tai nghe ABC</a></h2>
+                            <img src="imgs/Headphones/headphone1.jpg" class="recent-thumb" alt="">
+                            <h2><a href="">Campfire Cascade</a></h2>
                             <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
+                                <ins>70000đ</ins> <del>100000đ</del>
                             </div>                             
                         </div>
                         <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Tai nghe XYZ</a></h2>
+                            <img src="imgs/Headphones/headphone2.jpg" class="recent-thumb" alt="">
+                            <h2><a href="">Beyerdynamic</a></h2>
                             <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Tai nghe ABC</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
+                                <ins>89900đ</ins> <del>99900đ</del>
                             </div>                             
                         </div>
                         <div class="thubmnail-recent">
                             <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
                             <h2><a href="">Tai nghe ABC</a></h2>
                             <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
+                                <ins>40000đ</ins> <del>42500đ</del>
+                            </div>                             
+                        </div>
+                        <div class="thubmnail-recent">
+                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
+                            <h2><a href="">Tai nghe ABC</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>20000đ</ins> <del>225000đ</del>
                             </div>                             
                         </div>
                     </div>
@@ -204,7 +180,8 @@
                             <div class="col-sm-6">
                                 <div class="product-images">
                                     <div class="product-main-img">
-                                        <img src="img/product-2.jpg" alt="">
+                                        <img id="p1" src="imgs/Headphones/headphone1.jpg" alt="">
+                                        <img id="p2" src="imgs/Headphones/headphone2.jpg" alt="">
                                     </div>
                                     
                                     <div class="product-gallery">
