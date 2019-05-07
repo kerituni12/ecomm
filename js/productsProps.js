@@ -39,7 +39,7 @@ const data =
             NameSP: "Delta",
             SaleSP: 89999,
             money:  99900,
-            Category: "earbuds",
+            Category: "Earbuds",
             LuotMua: 0,
             Tag: ["tai nghe", "earbuds"]
         },
@@ -50,7 +50,7 @@ const data =
             NameSP: "Echo",
             SaleSP: 89999,
             money: 99900,
-            Category: "earbuds",
+            Category: "Earbuds",
             LuotMua: 0,
             Tag: ["tai nghe", "earbuds"]
         },
@@ -61,7 +61,7 @@ const data =
             NameSP: "Foxtrot",
             SaleSP: 89999,
             money: 99900,
-            Category: "earbuds",
+            Category: "Earbuds",
             LuotMua: 0,
             Tag: ["tai nghe", "earbuds"]
         },
@@ -72,7 +72,7 @@ const data =
             NameSP: "Golf",
             SaleSP: 89999,
             money: 99900,
-            Category: "earbuds",
+            Category: "Earbuds",
             LuotMua: 0,
             Tag: ["tai nghe", "earbuds"]
         },
@@ -83,7 +83,7 @@ const data =
             NameSP: "Hotel",
             SaleSP: 89999,
             money: 99900,
-            Category: "earbuds",
+            Category: "Earbuds",
             LuotMua: 0,
             Tag: ["tai nghe", "earbuds"]
         },
@@ -94,7 +94,7 @@ const data =
             NameSP: "India",
             SaleSP: 89999,
             money: 99900,
-            Category: "earbuds",
+            Category: "Earbuds",
             LuotMua: 0,
             Tag: ["tai nghe", "earbuds"]
         },
