@@ -133,78 +133,83 @@
                     
                     <div class="single-sidebar">
                         <h2 class="sidebar-title">sản phẩm bán chạy</h2>
-                        <div class="thubmnail-recent">
-                            <img src="imgs/Headphones/headphone1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Campfire Cascade</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>70000đ</ins> <del>100000đ</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="imgs/Headphones/headphone2.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Beyerdynamic</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>89900đ</ins> <del>99900đ</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Tai nghe ABC</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>40000đ</ins> <del>42500đ</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Tai nghe ABC</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>20000đ</ins> <del>225000đ</del>
-                            </div>                             
-                        </div>
+                        <div id="hotProducts">
+                            <script>
+                              var txt = "";
+                              var n = data.length - 55;
+                              for (var i = n; i >= n - 5 && i >= 0; i--)
+                                txt += `<div class="thubmnail-recent">
+                                          <img src="${data[i].LinkImageSP}" class="recent-thumb" alt="">
+                                          <h2><a href="single-product.html?id=${data[i].Id}">${data[i].NameSP}</a></h2>
+                                          <div class="product-sidebar-price">
+                                            <ins>${data[i].SaleSP}<sup>đ</sup></ins>
+                                            <del>${data[i].money}<sup>đ</sup></del>
+                                          </div>
+                                        </div>`;
+                              document.getElementById("hotProducts").innerHTML = txt;
+                            </script>
+                          </div>
                     </div>
                 </div>
                 
                 <div class="col-md-8">
                     <div class="product-content-right">
-                        <div class="product-breadcroumb">
-                            <a href="index.html">Trang chủ</a>
-                            <a href="shop.html">Loại sản phẩm</a>
-                            <a href="headphones.html">Headphone</a>
-                        </div>
-                        
+                        <a href="index.html">Trang chủ</a>
+                        <a href="javascript:document.location.href = `shop.html?category=${data[LoadSP].Category}`"> <!--Trang chủ/Category..-->
+                            <script>document.write(data[LoadSP].Category);</script>
+                        </a>
+                        <a href="#">    <!--Trang chủ/Category/TênSP..-->
+                            <script>document.write(data[LoadSP].NameSP);</script>
+                        </a>
+                    </div>  
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="product-images">
-                                    <div class="product-main-img">
-                                        <img id="p1" src="imgs/Headphones/headphone1.jpg" alt="">
-                                        <img id="p2" src="imgs/Headphones/headphone2.jpg" alt="">
-                                    </div>
-                                    
+                                    <div class="product-main-img"></div>
+                                    <script>
+                                        document.getElementsByClassName("product-main-img")[0].innerHTML = `<img src="${data[LoadSP].LinkImageSP}">`;
+                                    </script>
                                     <div class="product-gallery">
-                                        <img src="img/product-thumb-1.jpg" alt="">
-                                        <img src="img/product-thumb-2.jpg" alt="">
-                                        <img src="img/product-thumb-3.jpg" alt="">
+                                        <img src="imgs/Earbuds/earbuds13.jpg" alt="">
+                                        <img src="imgs/Headphones/headphone8.jpg" alt="">
+                                        <img src="imgs/Bluetooth/bluetooth15.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="col-sm-6">
                                 <div class="product-inner">
-                                    <h2 class="product-name">Tai nghe</h2>
+                                    <h2 class="product-name">
+                                        <script>document.write(data[LoadSP].NameSP);</script>
+                                    </h2>
                                     <div class="product-inner-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div>    
-                                    
+                                        <ins>
+                                          <script>document.write(data[LoadSP].SaleSP);</script>
+                                          <sup>đ</sup>
+                                        </ins>
+                                        <del>
+                                          <script>document.write(data[LoadSP].money);</script>
+                                          <sup>đ</sup>
+                                        </del>
+                                    </div>
+                    
                                     <form action="" class="cart">
                                         <div class="quantity">
-                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                          <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity"
+                                            min="1" step="1" onkeypress="validateNumber(event)">
                                         </div>
-                                        <button class="add_to_cart_button" type="submit">Thêm vào giỏ hàng</button>
-                                    </form>   
-                                    
+                                        <a href="javascript: addToCart(data[LoadSP].Id,$('.input-text.qty').val());" class="add_to_cart_button w-auto"
+                                          data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" draggable="false">Thêm
+                                          vào giỏ hàng</a>
+                                    </form>
+                    
                                     <div class="product-inner-category">
-                                        <p>Thể loại: <a href="">Summer</a>. Từ khoá: <a href="">đẹp</a>, <a href="">tốt</a>, <a href="">rẻ</a>, <a href="">bền</a>. </p>
-                                    </div> 
+                                        <p>Thể loại:
+                                          <a href="">
+                                            <script>document.write(data[LoadSP].Category);</script></a>
+                                        </p>
+                                    </div>
+                                </div>
                                     
                                     <div role="tabpanel">
                                         <ul class="product-tab" role="tablist">
@@ -248,96 +253,29 @@
                         
                         <div class="related-products-wrapper">
                             <h2 class="related-products-title">Các sản phẩm liên quan</h2>
-                            <div class="related-products-carousel">
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="img/product-1.jpg" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i>Xem chi tiết</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Tai nghe</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div> 
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="img/product-2.jpg" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> Xem chi tiết</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Tai nghe</a></h2>
-                                    <div class="product-carousel-price">
-                                        <ins>$899.00</ins> <del>$999.00</del>
-                                    </div> 
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="img/product-3.jpg" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> Xem chi tiết</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Tai nghe</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$400.00</ins> <del>$425.00</del>
-                                    </div>                                 
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="img/product-4.jpg" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> Xem chi tiết</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Tai nghe</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$200.00</ins> <del>$225.00</del>
-                                    </div>                            
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="img/product-5.jpg" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> Xem chi tiết</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Tai nghe</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$1200.00</ins> <del>$1355.00</del>
-                                    </div>                                 
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="img/product-6.jpg" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> Xem chi tiết</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Tai nghe</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$400.00</ins>
-                                    </div>                            
-                                </div>                                    
+                            <div class="related-products-carousel" id="relatedProducts">
+                                <script>
+                                  txt = "";
+                                  var n = data.length - 1;
+                                  for (var i = n; i >= n - 9 && i >= 0; i--)
+                                    txt += `<div class="single-product">
+                                              <div class="product-f-image">
+                                                <img style=" height: 297px;" src="${data[i].LinkImageSP}"alt="">
+                                                <div class="product-hover">
+                                                  <a href="javascript:addToCart(${data[i].Id})" class="add-to-cart-link">
+                                                      <i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
+                                                  <a class="view-details-link" href="single-product.html?id=${data[i].Id}">
+                                                  <i class="fa fa-link"></i>Thông tin</a>
+                                                </div>
+                                              </div>
+                                              <h2><a href="single-product.html?id=${data[i].Id}">${data[i].NameSP}</a></h2>
+                                              <div class="product-carousel-price">
+                                                <ins>$${data[i].SaleSP}</ins>
+                                                <del>$${data[i].money}</del>
+                                              </div>
+                                            </div>`;
+                                  document.getElementById("relatedProducts").innerHTML = txt;
+                                </script>
                             </div>
                         </div>
                     </div>                    
