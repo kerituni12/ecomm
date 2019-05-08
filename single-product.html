@@ -154,13 +154,15 @@
                 
                 <div class="col-md-8">
                     <div class="product-content-right">
-                        <a href="index.html">Trang chủ</a>
-                        <a href="javascript:document.location.href = `shop.html?category=${data[LoadSP].Category}`"> <!--Trang chủ/Category..-->
-                            <script>document.write(data[LoadSP].Category);</script>
-                        </a>
-                        <a href="#">    <!--Trang chủ/Category/TênSP..-->
-                            <script>document.write(data[LoadSP].NameSP);</script>
-                        </a>
+                        <div class="product-breadcroumb">
+                            <a href="index.html">Trang chủ</a>
+                            <a href="javascript:document.location.href = `shop.html?category=${data[LoadSP].Category}`"> <!--Trang chủ/Category..-->
+                                <script>document.write(data[LoadSP].Category);</script>
+                            </a>
+                            <a href="#">    <!--Trang chủ/Category/TênSP..-->
+                                <script>document.write(data[LoadSP].NameSP);</script>
+                            </a>
+                        </div>
                     </div>  
                         <div class="row">
                             <div class="col-sm-6">
@@ -319,9 +321,9 @@
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Các loại sản phẩm</h2>
                         <ul>
-                            <li><a href="shop.html?category=headphones">Headphone</a></li>
-                            <li><a href="shop.html?category=earbuds">Earbuds</a></li>
-                            <li><a href="shop.html?category=bluetooths">Tai nghe bluetooth</a></li>
+                            <li><a href="shop.html?category=Headphones">Headphone</a></li>
+                            <li><a href="shop.html?category=Earbuds">Earbuds</a></li>
+                            <li><a href="shop.html?category=Tai nghe bluetooth">Tai nghe bluetooth</a></li>
                         </ul>                        
                     </div>
                 </div>
