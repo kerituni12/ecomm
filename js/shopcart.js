@@ -140,13 +140,16 @@ var shoppingCart = (function() {
 // Triggers / Events
 // ***************************************** 
 // Add item
-$('.add_to_cart_button').click(function(event) {
+
+$('.single-product-area .product-show > .row').on("click", ".add_to_cart_button", function(event) {
+  console.log('aaaaaaaa');
   event.preventDefault();
   var name = $(this).data('name');
   var price = Number($(this).data('price'));
   shoppingCart.addItemToCart(name, price, 1);
   displayCart();
 });
+
 
 // Clear items
 $('.clear-cart').click(function() {
@@ -179,6 +182,7 @@ function displayCart() {
     $('.shop-table').html(output);
   $('.cart-amunt').html(shoppingCart.totalCart());
   $('.amount').html(shoppingCart.totalCart());
+  $('.checkamount').html(shoppingCart.totalCart());
   $('.product-count').html(shoppingCart.totalCount());
 }
 
