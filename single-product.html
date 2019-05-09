@@ -73,7 +73,7 @@
                 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="cart.html">Giỏ hàng - <span class="cart-amunt">0đ</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                        <a href="cart.html">Giỏ hàng - <span class="cart-amunt">0</span><span <span style="color: #5a88ca; font-weight: 700;">đ</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">0</span></a>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                         <li class="active"><a href="single-product.html">Chi tiết sản phẩm</a></li>
                         <li><a href="cart.html">Giỏ hàng</a></li>
                         <li><a href="checkout.html">Thanh toán</a></li>
-                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
                     </ul>
                 </div>  
             </div>
@@ -200,8 +200,8 @@
                                           <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity"
                                             min="1" step="1" onkeypress="validateNumber(event)">
                                         </div>
-                                        <a href="javascript: addToCart(data[LoadSP].Id,$('.input-text.qty').val());" class="add_to_cart_button w-auto"
-                                          data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" draggable="false">Thêm
+                                        <a href="#" class="add_to_cart_button w-auto"
+                                          data-quantity="1" data-name="Bravo" data-price="89999" data-product_sku="" data-product_id="70" rel="nofollow" draggable="false">Thêm
                                           vào giỏ hàng</a>
                                     </form>
                     
@@ -377,5 +377,6 @@
     
     <!-- Main Script -->
     <script src="js/main.js"></script>
+    <script src="js/shopcart.js"></script>
   </body>
 </html>
