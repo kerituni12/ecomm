@@ -150,7 +150,32 @@ $('.single-product-area .product-show > .row').on("click", ".add_to_cart_button"
   displayCart();
 });
 
+$('.add-to-cart-link').click(function() {
+  console.log('aaaaaaaa');
+  event.preventDefault();
+  var name = $(this).data('name');
+  var price = Number($(this).data('price'));
+  shoppingCart.addItemToCart(name, price, 1);
+  displayCart();
+});
 
+// $('.homeslide').click(function() {
+//   console.log('aaaaaaaa');
+//   event.preventDefault();
+//   var name = $(this).data('name');
+//   var price = Number($(this).data('price'));
+//   shoppingCart.addItemToCart(name, price, 1);
+//   displayCart();
+// });
+
+$('.add_to_cart_button').click(function() {
+  var num = $('.input-text').val();  
+  event.preventDefault();
+  var name = $(this).data('name');
+  var price = Number($(this).data('price'));
+  shoppingCart.addItemToCart(name, price, num);
+  displayCart();
+});
 // Clear items
 $('.clear-cart').click(function() {
   shoppingCart.clearCart();
@@ -169,7 +194,7 @@ function displayCart() {
       + "<td class='product-quantity'><div class='quantity buttons_added'><input type='button' class='minus' value='-' data-name=" + cartArray[i].name + ">"
       + "<input  type='number' size='4' class='input-text qty text' title='Qty' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
       + "<input type='button' class='plus' value='+' data-name=" + cartArray[i].name + ">" 
-      + "<td>" + cartArray[i].total + "</td>" 
+      + "<td>" + cartArray[i].total + "<span>đ</span></td>" 
       +  "</tr>";
   }
 
