@@ -151,7 +151,7 @@ $('.single-product-area .product-show > .row').on("click", ".add_to_cart_button"
 });
 
 $('.add-to-cart-link').click(function() {
-  console.log('aaaaaaaa');
+  
   event.preventDefault();
   var name = $(this).data('name');
   var price = Number($(this).data('price'));
