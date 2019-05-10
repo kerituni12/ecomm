@@ -35,6 +35,9 @@
             check=false;
         }
 
+        if (check== true) alert('ok');
+        //else alert('submit thanh cong');
+
         return check;
     });
 

@@ -38,7 +38,7 @@ var shoppingCart = (function() {
   obj.addItemToCart = function(name, price, count) {
     for(var item in cart) {
       if(cart[item].name === name) {
-        cart[item].count ++;
+        cart[item].count += count;
         saveCart();
         return;
       }
@@ -142,8 +142,8 @@ var shoppingCart = (function() {
 // Add item
 
 $('.single-product-area .product-show > .row').on("click", ".add_to_cart_button", function(event) {
-  console.log('aaaaaaaa');
-  event.preventDefault();
+  //console.log('aaaaaaaa');
+  event.preventDefault(); //no redirect link
   var name = $(this).data('name');
   var price = Number($(this).data('price'));
   shoppingCart.addItemToCart(name, price, 1);
@@ -169,7 +169,7 @@ $('.add-to-cart-link').click(function() {
 // });
 
 $('.add_to_cart_button').click(function() {
-  var num = $('.input-text').val();  
+  var num = Number($('.input-text').val());  
   event.preventDefault();
   var name = $(this).data('name');
   var price = Number($(this).data('price'));
