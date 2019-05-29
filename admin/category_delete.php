@@ -10,7 +10,7 @@
 			$stmt = $conn->prepare("DELETE FROM category WHERE id=:id");
 			$stmt->execute(['id'=>$id]);
 
-			$_SESSION['success'] = 'Chuyên mục đã được xóa';
+			$_SESSION['success'] = 'Danh mục đã được xóa';
 		}
 		catch(PDOException $e){
 			$_SESSION['error'] = $e->getMessage();

@@ -195,7 +195,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Đang kích hoạt...</b></h4>
+              <h4 class="modal-title"><b>Kích hoạt tài khoản</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="users_activate.php">
@@ -207,7 +207,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Đóng</button>
-              <button type="submit" class="btn btn-success btn-flat" name="activate"><i class="fa fa-check"></i> Đã kích hoạt</button>
+              <button type="submit" class="btn btn-success btn-flat" name="activate"><i class="fa fa-check"></i> Kích hoạt</button>
               </form>
             </div>
         </div>

@@ -5,7 +5,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Thêm chuyên mục</b></h4>
+              <h4 class="modal-title"><b>Thêm Danh mục</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="category_add.php">
@@ -33,7 +33,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Chỉnh sửa chuyên mục</b></h4>
+              <h4 class="modal-title"><b>Chỉnh sửa Danh mục</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="category_edit.php">
@@ -62,13 +62,13 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Xóa chuyên mục</b></h4>
+              <h4 class="modal-title"><b>Xóa Danh mục</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="category_delete.php">
                 <input type="hidden" class="catid" name="id">
                 <div class="text-center">
-                    <p>Xóa chuyên mục</p>
+                    <p>Xóa Danh mục</p>
                     <h2 class="bold catname"></h2>
                 </div>
             </div>

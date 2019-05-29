@@ -15,7 +15,7 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">Báo cáo</li>
       <li><a href="home.php"><i class="fa fa-dashboard"></i> <span>Bảng điều khiển</span></a></li>
-      <li><a href="sales.php"><i class="fa fa-money"></i> <span>Doanh số</span></a></li>
+      <li><a href="sales.php"><i class="fa fa-money"></i> <span>Giao dịch</span></a></li>
       <li class="header">Quản Lý</li>
       <li><a href="users.php"><i class="fa fa-users"></i> <span>Người dùng</span></a></li>
       <li class="treeview">
@@ -28,7 +28,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="products.php"><i class="fa fa-circle-o"></i> Danh sách sản phẩm</a></li>
-          <li><a href="category.php"><i class="fa fa-circle-o"></i> Chuyên mục</a></li>
+          <li><a href="category.php"><i class="fa fa-circle-o"></i> Danh mục</a></li>
         </ul>
       </li>
     </ul>

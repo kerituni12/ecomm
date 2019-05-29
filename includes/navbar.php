@@ -14,7 +14,7 @@
           <li><a href="index.php">Trang Chủ</a></li>          
           <li><a href="">Liên Hệ</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chuyên Mục <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Danh mục <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <?php
              
@@ -72,25 +72,25 @@
               echo '
                 <li class="dropdown user user-menu">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="'.$image.'" class="user-image" alt="User Image">
+                    <img src="'.$image.'" class="user-image" alt="Ảnh đại diện">
                     <span class="hidden-xs">'.$user['firstname'].' '.$user['lastname'].'</span>
                   </a>
                   <ul class="dropdown-menu">
                     <!-- User image -->
                     <li class="user-header">
-                      <img src="'.$image.'" class="img-circle" alt="User Image">
+                      <img src="'.$image.'" class="img-circle" alt="Ảnh đại diện">
 
                       <p>
                         '.$user['firstname'].' '.$user['lastname'].'
-                        <small>Member since '.date('M. Y', strtotime($user['created_on'])).'</small>
+                        <small>Ngày đăng ký '.date('M. Y', strtotime($user['created_on'])).'</small>
                       </p>
                     </li>
                     <li class="user-footer">
                       <div class="pull-left">
-                        <a href="profile.php" class="btn btn-default btn-flat">Profile</a>
+                        <a href="profile.php" class="btn btn-default btn-flat">Hồ sơ</a>
                       </div>
                       <div class="pull-right">
-                        <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+                        <a href="logout.php" class="btn btn-default btn-flat">Đăng xuất</a>
                       </div>
                     </li>
                   </ul>

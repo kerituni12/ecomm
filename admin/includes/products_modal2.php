@@ -5,13 +5,13 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Xóa chuyên mục</b></h4>
+              <h4 class="modal-title"><b>Xóa Danh mục</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="products_delete.php">
                 <input type="hidden" class="prodid" name="id">
                 <div class="text-center">
-                    <p>Xóa chuyên mục</p>
+                    <p>Xóa Danh mục</p>
                     <h2 class="bold name"></h2>
                 </div>
             </div>
@@ -31,7 +31,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Chỉnh sửa chuyên mục</b></h4>
+              <h4 class="modal-title"><b>Chỉnh sửa Danh mục</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="products_edit.php">
@@ -43,7 +43,7 @@
                     <input type="text" class="form-control" id="edit_name" name="name">
                   </div>
 
-                  <label for="edit_category" class="col-sm-1 control-label">Chuyên mục</label>
+                  <label for="edit_category" class="col-sm-1 control-label">Danh mục</label>
 
                   <div class="col-sm-5">
                     <select class="form-control" id="edit_category" name="category">

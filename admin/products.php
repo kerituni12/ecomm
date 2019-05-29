@@ -45,7 +45,7 @@
           echo "
             <div class='alert alert-success alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-check'></i> Success!</h4>
+              <h4><i class='icon fa fa-check'></i> Hoàn thành!</h4>
               ".$_SESSION['success']."
             </div>
           ";
@@ -60,7 +60,7 @@
               <div class="pull-right">
                 <form class="form-inline">
                   <div class="form-group">
-                    <label>Chuyên mục: </label>
+                    <label>Danh mục: </label>
                     <select class="form-control input-sm" id="select_category">
                       <option value="0">ALL</option>
                       <?php

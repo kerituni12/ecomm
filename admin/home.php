@@ -142,7 +142,7 @@
                 
               ?>
 
-              <p>Doanh số hôm nay</p>
+              <p>Giao dịch hôm nay</p>
             </div>
             <div class="icon">
               <i class="fa fa-money"></i>

@@ -23,25 +23,6 @@
 </div>
 
 <div class="row">
-	<div class="box box-solid">
-	  	<div class="box-header with-border">
-	    	<h3 class="box-title"><b>Trở thành thành viên</b></h3>
-	  	</div>
-	  	<div class="box-body">
-	    	<p>Nhận cập nhật miễn phí về các sản phẩm mới nhất và giảm giá đến hộp thư đến của bạn..</p>
-	    	<form method="POST" action="">
-		    	<div class="input-group">
-	                <input type="text" class="form-control">
-	                <span class="input-group-btn">
-	                    <button type="button" class="btn btn-info btn-flat"><i class="fa fa-envelope"></i> </button>
-	                </span>
-	            </div>
-		    </form>
-	  	</div>
-	</div>
-</div>
-
-<div class="row">
 	<div class='box box-solid'>
 	  	<div class='box-header with-border'>
 	    	<h3 class='box-title'><b>Theo dõi chúng tôi</b></h3>

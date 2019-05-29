@@ -33,7 +33,7 @@
                     </div>
                     <input type="text" class="form-control pull-right col-sm-8" id="reservation" name="date_range">
                   </div>
-                  <button type="submit" class="btn btn-success btn-sm btn-flat" name="print"><span class="glyphicon glyphicon-print"></span> In</button>
+                  <a onclick="alert('chưa phát triển')" class="btn btn-success btn-sm btn-flat" name="print"><span class="glyphicon glyphicon-print"></span> In</a>
                 </form>
               </div>
             </div>
@@ -46,6 +46,7 @@
                   <th>Giao dịch#</th>
                   <th>Số tiền</th>
                   <th>Chi tiết</th>
+                  <th>Bình luận</th>
                 </thead>
                 <tbody>
                   <?php
@@ -58,6 +59,8 @@
                         $stmt = $conn->prepare("SELECT * FROM details LEFT JOIN products ON products.id=details.product_id WHERE details.sales_id=:id");
                         $stmt->execute(['id'=>$row['salesid']]);
                         $total = 0;
+
+                        $ykien = $row['cmt'];
                         foreach($stmt as $details){
                           $subtotal = $details['price']*$details['quantity'];
                           $total += $subtotal;
@@ -70,6 +73,7 @@
                             <td>".$row['pay_id']."</td>
                             <td>&#36; ".number_format($total, 2)."</td>
                             <td><button type='button' class='btn btn-info btn-sm btn-flat transact' data-id='".$row['salesid']."'><i class='fa fa-search'></i> Xem</button></td>
+                            <td>".$ykien."</td>
                           </tr>
                         ";
                       }

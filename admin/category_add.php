@@ -12,13 +12,13 @@
 		$row = $stmt->fetch();
 
 		if($row['numrows'] > 0){
-			$_SESSION['error'] = 'Chuyên mục đã tồn tại';
+			$_SESSION['error'] = 'Danh mục đã tồn tại';
 		}
 		else{
 			try{
 				$stmt = $conn->prepare("INSERT INTO category (name) VALUES (:name)");
 				$stmt->execute(['name'=>$name]);
-				$_SESSION['success'] = 'Chuyên mục đã được thêm';
+				$_SESSION['success'] = 'Danh mục đã được thêm';
 			}
 			catch(PDOException $e){
 				$_SESSION['error'] = $e->getMessage();

@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Chuyên mục
+        Danh mục
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
         <li>Products</li>
-        <li class="active">Chuyên mục</li>
+        <li class="active">Danh mục</li>
       </ol>
     </section>
 
@@ -53,7 +53,7 @@
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>Tên chuyên mục</th>
+                  <th>Tên Danh mục</th>
                   <th>Công cụ</th>
                 </thead>
                 <tbody>

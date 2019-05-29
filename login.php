@@ -31,11 +31,11 @@
     	<form action="verify.php" method="POST">
       		<div class="form-group has-feedback">
         		<input type="email" class="form-control" name="email" placeholder="Email" required>
-        		<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        		<span class="glyphicon glyphicon-envelope form-control-feedback" style="top: 0px;"></span>
       		</div>
           <div class="form-group has-feedback">
             <input type="password" class="form-control" name="password" placeholder="Password" required>
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            <span class="glyphicon glyphicon-lock form-control-feedback" style="top: 0px;"></span>
           </div>
       		<div class="row">
     			<div style="margin: 0 5%;">

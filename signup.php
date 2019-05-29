@@ -40,23 +40,23 @@
     	<form action="register.php" method="POST">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" name="firstname" placeholder="Họ" value="<?php echo (isset($_SESSION['firstname'])) ? $_SESSION['firstname'] : '' ?>" required>
-            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            <span class="glyphicon glyphicon-user form-control-feedback" style="top: 0px;"></span>
           </div>
           <div class="form-group has-feedback">
             <input type="text" class="form-control" name="lastname" placeholder="Tên" value="<?php echo (isset($_SESSION['lastname'])) ? $_SESSION['lastname'] : '' ?>"  required>
-            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            <span class="glyphicon glyphicon-user form-control-feedback" style="top: 0px;"></span>
           </div>
       		<div class="form-group has-feedback">
         		<input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo (isset($_SESSION['email'])) ? $_SESSION['email'] : '' ?>" required>
-        		<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        		<span class="glyphicon glyphicon-envelope form-control-feedback" style="top: 0px;"></span>
       		</div>
           <div class="form-group has-feedback">
             <input type="password" class="form-control" name="password" placeholder="Mật Khẩu" required>
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            <span class="glyphicon glyphicon-lock form-control-feedback" style="top: 0px;"></span>
           </div>
           <div class="form-group has-feedback">
             <input type="password" class="form-control" name="repassword" placeholder="Nhập lại mật khẩu" required>
-            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+            <span class="glyphicon glyphicon-log-in form-control-feedback" style="top: 0px;"></span>
           </div>          
           <hr>
       		<div class="row">
