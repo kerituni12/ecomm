@@ -1,65 +1,8 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
-<body class="hold-transition skin-blue layout-top-nav">
-<div class="header-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="user-menu">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> Yêu thích</a></li>
-                            <li><a href="cart.html"><i class="fa fa-user"></i> Giỏ hàng</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-user"></i> Thanh toán</a></li>
-                            <li><a href="contact.html"><i class="fa fa-user"></i> Đăng nhập</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End header area -->
-    
-    <div class="site-branding-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="logo">
-                        <h1><a href="./"><img src="imgs/logo.png"></a></h1>
-                    </div>
-                </div>
-                
-                <div class="col-sm-6">
-                    <div class="shopping-item">
-                        <a href="cart.html">Giỏ hàng - <span class="cart-amunt">0</span> <span <span style="color: #5a88ca; font-weight: 700;">đ</span><i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End site branding area -->
-    
-    <div class="mainmenu-area">
-        <div class="container">
-            <div class="row">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div> 
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Trang chủ</a></li>
-                        <li><a href="shop.html">Các sản phẩm</a></li>
-                        <li><a href="single-product.html">Chi tiết sản phẩm</a></li>
-                        <li class="active"><a href="cart.html">Giỏ hàng</a></li>
-                        <li><a href="checkout.html">Thanh toán</a></li>
-                        <li><a href="contact.html">Liên hệ</a></li>
-                    </ul>
-                </div>  
-            </div>
-        </div>
-    </div> <!-- End mainmenu area -->
+<body>
+
+<?php include 'includes/navbar.php' ?>
     
     <div class="product-big-title-area">
         <div class="container">
@@ -89,45 +32,30 @@
                     
                     <div class="single-sidebar">
                         <h2 class="sidebar-title">Danh mục sản phẩm</h2>
-                        <div class="thubmnail-recent">
-                            <img src="imgs/Headphones/headphone1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="single-product.html?id=21">GSP500</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>700000đ</ins> <del>720000đ</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="imgs/Headphones/headphone2.jpg" class="recent-thumb" alt="">
-                            <h2><a href="single-product.html?id=22">Uniform</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>600000đ</ins> <del>800000đ</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="imgs/Headphones/headphone3.jpg" class="recent-thumb" alt="">
-                            <h2><a href="single-product.html?id=23">Victor</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>69000đ</ins> <del>79000đ</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="imgs/Headphones/headphone4.jpg" class="recent-thumb" alt="">
-                            <h2><a href="single-product.html?id=23">Whiskey</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>99000đ</ins> <del>100000đ</del>
-                            </div>                             
-                        </div>
-                    </div>
-                    
-                    <div class="single-sidebar">
-                        <h2 class="sidebar-title">Bài đăng gần đây</h2>
-                        <ul>
-                            <li><a href="single-product.html?id=1">Tai nghe Alfa</a></li>
-                            <li><a href="single-product.html?id=2">Tai nghe Bravo</a></li>
-                            <li><a href="single-product.html?id=3">Tai nghe Charlie</a></li>
-                            <li><a href="single-product.html?id=4">Tai nghe Delta</a></li>
-                            <li><a href="single-product.html?id=5">Tai nghe Echo</a></li>
-                        </ul>
+
+                         <?php
+                            $now = date('Y-m-d');
+                            $conn = $pdo->open();
+
+                            $stmt = $conn->prepare("SELECT * FROM products WHERE date_view=:now ORDER BY counter DESC LIMIT 3");
+                            $stmt->execute(['now'=>$now]);
+                            foreach($stmt as $row){
+                                $image = (!empty($row['photo'])) ? 'images/'.$row['photo'] : 'images/noimage.jpg';
+                                echo '
+                                <div class="thubmnail-recent">
+                                        <img src="'.$image.'" class="recent-thumb" alt="">
+                                        <h2><a href="product.php?product='.$row['slug'].'">'.$row['name'].'</a></h2>
+                                        <div class="product-sidebar-price">
+                                            <ins>'.$row['price'].'</ins>
+                                        </div>                             
+                                    </div> 
+                                            
+                                ';
+                            }
+
+                            $pdo->close();
+                        ?>
+                        
                     </div>
                 </div>
                 
@@ -153,6 +81,7 @@
 
                                 </table>
                             </form>
+
 							<?php
 	        			if(isset($_SESSION['user'])){
 	        				echo '<a href="checkout.php" title"Check Out" class="btn btn-success">Thanh toán</a>';
@@ -163,78 +92,39 @@
 	        				";
 	        			}
 	        		?>
-                            <div class="cart-collaterals">
+                            <div class="cart-collaterals" style="margin-top: 50px;">
 
 
-                            <div class="cross-sells">
+                            <div >
                                 <h2>Có thể bạn sẽ thích..</h2>
                                 <ul class="products">
+<?php
+                $now = date('Y-m-d');
+                $conn = $pdo->open();
+
+                $stmt = $conn->prepare("SELECT * FROM products WHERE date_view=:now ORDER BY counter DESC LIMIT 3");
+                $stmt->execute(['now'=>$now]);
+                foreach($stmt as $row){
+                    $image = (!empty($row['photo'])) ? 'images/'.$row['photo'] : 'images/noimage.jpg';
+                    echo '
+                        
                                     <li class="product">
-                                        <a href="single-product.html?id=21">
-                                            <img width="325" height="325" alt="T_4_front" class="attachment-shop_catalog wp-post-image" src="imgs/Headphones/headphone1.jpg">
-                                            <h3>GSP500</h3>
-                                            <span class="price"></span>700000đ</span>
+                                        <a href="product.php?product='.$row['slug'].'">
+                                            <img width="325" height="325" alt="T_4_front" class="attachment-shop_catalog wp-post-image" src="'.$image.'">
+                                            <h3>'.$row['name'].'</h3>
+                                            <span class="price"></span>'.$row['price'].'</span>
                                         </a>
                                     </li>
+                                
+                    ';
+                }
 
-                                    <li class="product">
-                                        <a href="single-product.html?id=22">
-                                            <img width="325" height="325" alt="T_4_front" class="attachment-shop_catalog wp-post-image" src="imgs/Headphones/headphone2.jpg">
-                                            <h3>Uniform</h3>
-                                            <span class="price"></span>720000đ</span>
-                                        </a>
-                                    </li>
-                                </ul>
+                $pdo->close();
+            ?>
+                
+            </ul>
+
                             </div>
-
-
-                            <div class="cart_totals ">
-                                <h2>Tổng thanh toán</h2>
-
-                                <table cellspacing="0">
-                                    <tbody>
-                                        <tr class="cart-subtotal">
-                                            <th>Giá đơn hàng</th>
-                                            <td><span class="amount">0</span><span>đ</span></td>
-                                        </tr>
-
-                                        <tr class="shipping">
-                                            <th>Phí ship </th>
-                                            <td>Free Shipping</td>
-                                        </tr>
-
-                                        <tr class="order-total">
-                                            <th>Tổng giá trị đơn hàng</th>
-                                            <td><strong><span class="amount">0</span><span>đ</span></strong> </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-
-                            <form method="post" action="#" class="shipping_calculator">
-                                <h2><a class="shipping-calculator-button" data-toggle="collapse" href="#calcalute-shipping-wrap" aria-expanded="false" aria-controls="calcalute-shipping-wrap">Tính tiền ship</a></h2>
-
-                                <section id="calcalute-shipping-wrap" class="shipping-calculator-form collapse">
-
-                                <p class="form-row form-row-wide">
-                                <select rel="calc_shipping_state" class="country_to_state" id="calc_shipping_country" name="calc_shipping_country">
-                                    <option value="">Select a country…</option>
-                                    <option value="AX">Åland Islands</option>
-                                    <option value="AF">Afghanistan</option>                                    
-                                </select>
-                                </p>
-
-                                <p class="form-row form-row-wide"><input type="text" id="calc_shipping_state" name="calc_shipping_state" placeholder="Nơi ở" value="" class="input-text"> </p>
-
-                                <p class="form-row form-row-wide"><input type="text" id="calc_shipping_postcode" name="calc_shipping_postcode" placeholder="Mã Postcode / Zip" value="" class="input-text"></p>
-
-
-                                <p><button class="button" value="1" name="calc_shipping" type="submit">Cập nhật giá tiền</button></p>
-
-                                </section>
-                            </form>
-
 
                             </div>
                         </div>                        
@@ -323,23 +213,9 @@
         </div>
     </div> <!-- End footer bottom area -->
    
-    <!-- Latest jQuery form server -->
-    <script src="https://code.jquery.com/jquery.min.js"></script>
+ <?php include 'includes/scripts.php'; ?>
     
-    <!-- Bootstrap JS form CDN -->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    
-    <!-- jQuery sticky menu -->
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    
-    <!-- jQuery easing -->
-    <script src="js/jquery.easing.1.3.min.js"></script>
-    
-    <!-- Main Script -->
-    <script src="js/main.js"></script>
-     <script src="js/shopcart.js"></script>
-     <script>
+<script>
 var total = 0;
 $(function(){
 	$(document).on('click', '.cart_delete', function(e){
